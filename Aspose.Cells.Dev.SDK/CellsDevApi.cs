@@ -47,7 +47,7 @@ namespace Aspose.Cells.Dev.SDK
         /// <param name="clientSecrent"></param>
         /// <param name="baseUrl"></param>
         /// <param name="version"></param>
-        public CellsDevApi(string basePath = "https://api.aspose.dev",string version = "v1.0")    
+        public CellsDevApi(string basePath = "https://api.conholdate.cloud",string version = "v1.0")    
         {
             this.Host = basePath;
             this.Version = version;
@@ -57,7 +57,7 @@ namespace Aspose.Cells.Dev.SDK
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         }
 
-        public CellsDevApi(string clientId, string clientSecret, string basePath = "https://api.aspose.dev", string version = "v1.0")
+        public CellsDevApi(string clientId, string clientSecret, string basePath = "https://api.conholdate.cloud", string version = "v1.0")
         {
             this.Host = basePath;
             this.Version = version;

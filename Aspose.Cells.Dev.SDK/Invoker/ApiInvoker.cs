@@ -87,7 +87,7 @@ namespace Aspose.Cells.Dev.SDK
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="paramName"></param>
-        public FileInfo ToFileInfo(Stream stream, string paramName)
+        public InvokerFileInfo ToFileInfo(Stream stream, string paramName)
         {
             string contentType = paramName.Equals("File", StringComparison.InvariantCultureIgnoreCase)
                 ? "application/octet-stream"
@@ -96,7 +96,7 @@ namespace Aspose.Cells.Dev.SDK
             {
                 contentType = "text/csv";
             }
-            return new FileInfo
+            return new InvokerFileInfo
             {
                 Name = paramName,
                 MimeType = contentType,
@@ -122,9 +122,9 @@ namespace Aspose.Cells.Dev.SDK
 
                     needsClrf = true;
 
-                    if (param.Value is FileInfo)
+                    if (param.Value is InvokerFileInfo)
                     {
-                        var fileInfo = (FileInfo)param.Value;
+                        var fileInfo = (InvokerFileInfo)param.Value;
                         var postData =
                             string.Format(
                                 "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
@@ -156,9 +156,9 @@ namespace Aspose.Cells.Dev.SDK
             else
             {
                 foreach (var param in postParameters)
-                    if (param.Value is FileInfo)
+                    if (param.Value is InvokerFileInfo)
                     {
-                        var fileInfo = (FileInfo)param.Value;
+                        var fileInfo = (InvokerFileInfo)param.Value;
                         //var fileInfo = (FileInfo)param.Value;
                         var postData =
                             string.Format(

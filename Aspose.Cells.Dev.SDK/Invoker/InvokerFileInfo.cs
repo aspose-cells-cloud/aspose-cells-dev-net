@@ -28,7 +28,7 @@ namespace Aspose.Cells.Dev.SDK
     /// <summary>
     ///     FileInfo
     /// </summary>
-    internal struct FileInfo
+    internal struct InvokerFileInfo
     {
         /// <summary>
         ///     Name
